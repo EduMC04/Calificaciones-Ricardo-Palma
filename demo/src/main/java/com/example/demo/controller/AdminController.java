@@ -12,20 +12,19 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-@RequestMapping("/InicioSesion")
+@RequestMapping("/login")
 public class AdminController {
     
-    @Autowired
-    private UsuarioService usuarioService;
+    /* @Autowired
+    private UsuarioService usuarioService; */
 
     // Métodos para manejar las solicitudes de inicio de sesión pueden ser añadidos aquí
     @GetMapping
-    public String mostrarPaginaInicioSesion(Model model) {
-        model.addAttribute("usuario", new Usuario());
-        return "inicioSesion"; // Retorna la vista de inicio de sesión
+    public String mostrarPaginaInicioSesion() {
+        return "login";
     }
 
-    @PostMapping("/validar")
+/*     @PostMapping("/validar")
     public String validarCredenciales(@ModelAttribute Usuario usuario) {
         String correo = usuario.getCorreo();
         String contrasena = usuario.getContrasena();
@@ -35,6 +34,6 @@ public class AdminController {
         } else {
             return "redirect:/InicioSesion?error=true"; // Redirige de vuelta al inicio de sesión con un error
         }
-    }
+    } */
 
 }
