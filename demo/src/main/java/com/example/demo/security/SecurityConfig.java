@@ -14,18 +14,13 @@ public class SecurityConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .authorizeHttpRequests(auth -> auth
-                        // 1. Permite el acceso al formulario de evaluación
                         .requestMatchers("/FormularioEvaluacion").permitAll()
-
-                        // 2. ¡CRUCIAL! Permite el acceso a la URL de inicio de sesión
                         .requestMatchers("/login").permitAll()
-
-                        // 3. Cualquier otra solicitud debe estar autenticada
                         .anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/login")
                         .defaultSuccessUrl("/PaginaPrincipal")
-                        .permitAll() // Esto es solo para la configuración del formLogin, no de la ruta.
+                        .permitAll()
                 );
 
         return httpSecurity.build();

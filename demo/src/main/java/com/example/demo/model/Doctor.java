@@ -11,10 +11,14 @@ public class Doctor {
     private Long id;
 
     private String nombre;
-    private String Apellidos;
+    private String apellidos;
     private String correo;
     private String especialidad;
     private String fechaNacimiento;
+
+    private String telefono;
+    private String cedula;
+    private String direccion;
 
     // Getters and Setters
     
@@ -31,10 +35,10 @@ public class Doctor {
         this.nombre = nombre;
     }
     public String getApellidos() {
-        return Apellidos;
+        return apellidos;
     }
     public void setApellidos(String apellidos) {
-        Apellidos = apellidos;
+        this.apellidos = apellidos;
     }
     public String getCorreo() {
         return correo;
@@ -53,6 +57,24 @@ public class Doctor {
     }
     public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+    public String getTelefono() {
+        return telefono;
+    }
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+    public String getCedula() {
+        return cedula;
+    }
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+    public String getDireccion() {
+        return direccion;
+    }
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
     
 

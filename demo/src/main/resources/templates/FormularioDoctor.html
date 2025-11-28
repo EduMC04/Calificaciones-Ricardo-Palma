@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario Doctor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <style>
@@ -15,39 +15,9 @@
     
     <h1 class="text-center bg-info p-3 text-white">Formulario Doctor</h1>
 
-    <!-- <div class="container my-4">
-        <form th:thread="post" th:action="@{/FormularioDoctor/guardar}" th:object="${doctor}" method="post">
-            <input type="hidden" th:field="*{id}"/>
-
-            <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" th:field="*{nombre}" class="form-control" id="nombre" placeholder="Ingrese su nombre">
-            </div>
-            <div class="mb-3">
-                <label for="especialidad" class="form-label">Apellidos</label>
-                <input type="text" th:field="*{apellidos}" class="form-control" id="especialidad" placeholder="Ingrese su especialidad">
-            </div>
-            <div class="mb-3">
-                <label for="correo" class="form-label">Correo</label>
-                <input type="email" th:field="*{correo}" class="form-control" id="correo" placeholder="ejemplo@correo.com">
-            </div>
-            <div class="mb-3">
-                <label for="especialidad" class="form-label">Especialidad</label>
-                <input type="text" th:field="*{especialidad}" class="form-control" id="especialidad" placeholder="Ingrese especialidad">
-            </div>
-            <div class="mb-3">
-                <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
-                <input type="date" th:field="*{fechaNacimiento}" class="form-control" id="fechaNacimiento">
-            </div>
-            <div class="container text-center">
-                <button type="submit" class="btn btn-danger">Enviar</button>
-            </div>
-        </form>
-    </div> -->
-
     <div class="container bg-white text-center my-4 p-4 rounded-5 shadow-lg">
         <h2 class="text-info">Registro de Datos</h2>
-        <form th:thread="post" th:action="@{/FormularioDoctor/guardar}" th:object="${doctor}" method="post"></form>
+        <form th:action="@{/FormularioDoctor/guardar}" th:object="${doctor}" method="post">
             <input type="hidden" th:field="*{id}"/>
             <div class="row text-start my-3">
                 <div class="col-6">
@@ -55,8 +25,8 @@
                     <input type="text" th:field="*{nombre}" class="form-control" id="nombre" placeholder="Nombre(s)">
                 </div>
                 <div class="col-6">
-                    <label for="especialidad" class="form-label">Apellidos</label>
-                    <input type="text" th:field="*{apellidos}" class="form-control" id="especialidad" placeholder="Apellidos">
+                    <label for="apellidos" class="form-label">Apellidos</label>
+                    <input type="text" th:field="*{apellidos}" class="form-control" id="apellidos" placeholder="Apellidos">
                 </div>
             </div>
             <div class="row text-start my-3">
@@ -82,9 +52,9 @@
                 <div class="col-9">
                     <select class="form-select" th:field="*{especialidad}" id="especialidad" required>
                         <option value="" selected>Selecione una especialidad</option>      
-                        <option value="">Pediatria</option>      
-                        <option value="">Geriatria</option>      
-                        <option value="">Traumatología</option>      
+                        <option value="Pediatria">Pediatria</option>      
+                        <option value="Geriatria">Geriatria</option>      
+                        <option value="Traumatología">Traumatología</option>      
                     </select>
                 </div>
             </div>

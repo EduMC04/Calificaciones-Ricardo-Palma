@@ -18,8 +18,7 @@ public class DoctorController {
 
     @Autowired
     private DoctorService doctorService;
-    
-    // Métodos para manejar las solicitudes del formulario del doctor pueden ser añadidos aquí
+
     @GetMapping
     public String mostrarFormularioDoctor(Model model) {
         model.addAttribute("doctor", new Doctor());
